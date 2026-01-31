@@ -9,7 +9,7 @@ A Rich Picture is not a system design. It is a shared understanding of a problem
 
 ## 🌍 Situation Overview  
 
-```markdown
+```text
  ┌─────────────────────┐        ┌─────────────────────┐
  │  Provider A System  │        │  Provider B System  │
  │  (Hospital / PCP)   │        │  (Specialist / Lab) │
