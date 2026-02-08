@@ -13,3 +13,11 @@ During the problem specification phase a problem related to healthcare is propos
 **Why it matters now**: Improving the flow of patient information between providers offers the potential to improve healthcare outcomes. Rather than trying to break down the silos between systems, there is an opportunity for individuals to be in control of their own healthcare information in an accurate and timely manner.
 
 https://github.com/garethdigby/patientinfo/blob/dev-gareth/1-specify/2_2_infographic.png
+
+## Infographic  
+
+![Rich picture](https://github.com/garethdigby/patientinfo/blob/dev-gareth/1-specify/2_2_infographic.png)  
+
+## Rich picture  
+
+![Rich picture](../2_1_Rich_picture.md)  
