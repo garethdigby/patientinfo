@@ -1,0 +1,63 @@
+flowchart LR
+    HIE["🏥 Patient-Controlled\nHealth Information Exchange\n(System Under Consideration)"]
+
+    %% Human actors
+    Patient(["👤 Patient"])
+    Carer(["👥 Family Member / Carer"])
+    Clinician(["🩺 Clinician / Provider"])
+    Facility(["🏢 Healthcare Facility"])
+
+    %% External systems
+    EHR["⚙️ Proprietary EHR Systems"]
+    HealthPlatform["📱 Proprietary Health Platform\n(Consumer Device)"]
+    eHealthExchange["🌐 eHealth Exchange\nNetwork"]
+    Pharmacy["💊 Pharmacy\n(Retail / Immunisation)"]
+
+    %% Patient interactions
+    Patient -->|"View consolidated health record"| HIE
+    Patient -->|"Add / correct personal health data"| HIE
+    Patient -->|"Grant / revoke provider access"| HIE
+    Patient -->|"Request printed record summary"| HIE
+    HIE -->|"Consolidated health record view"| Patient
+    HIE -->|"Access log & audit trail"| Patient
+
+    %% Carer interactions
+    Carer -->|"Manage record access on behalf of patient"| HIE
+    HIE -->|"Patient record & access status"| Carer
+
+    %% Clinician interactions
+    Clinician -->|"Request patient record at point of care"| HIE
+    Clinician -->|"Submit clinical notes & findings"| HIE
+    HIE -->|"Consolidated patient history"| Clinician
+    HIE -->|"Automatic record updates"| Clinician
+
+    %% Healthcare Facility interactions
+    Facility -->|"Register & connect to platform"| HIE
+    Facility -->|"Receive patient consent at check-in"| HIE
+    HIE -->|"Authorised patient records"| Facility
+
+    %% Proprietary EHR System interactions
+    EHR -->|"Push patient records via FHIR API"| HIE
+    HIE -->|"Write-back normalised patient data"| EHR
+
+    %% Proprietary Health Platform interactions
+    HealthPlatform -->|"Share health data via SMART on FHIR"| HIE
+    HIE -->|"Export patient data"| HealthPlatform
+
+    %% eHealth Exchange interactions
+    eHealthExchange -->|"Supply records from\nparticipating organisations"| HIE
+    HIE -->|"Query & share records\nacross network"| eHealthExchange
+
+    %% Pharmacy interactions
+    Pharmacy -->|"Provide immunisation /\nmedication records"| HIE
+
+    %% Styling
+    style HIE fill:#1F4E79,color:#ffffff,stroke:#1F4E79,font-weight:bold
+    style Patient fill:#EBF3FB,stroke:#2E75B6
+    style Carer fill:#EBF3FB,stroke:#2E75B6
+    style Clinician fill:#EBF3FB,stroke:#2E75B6
+    style Facility fill:#EBF3FB,stroke:#2E75B6
+    style EHR fill:#FFF4E0,stroke:#D4870A
+    style HealthPlatform fill:#FFF4E0,stroke:#D4870A
+    style eHealthExchange fill:#FFF4E0,stroke:#D4870A
+    style Pharmacy fill:#FFF4E0,stroke:#D4870A
